@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Add new player</h1>
+<mat-dialog-content>
+  <p>Please enter the name</p>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="name" required />
+    <mat-error *ngIf="!isNameValid() && name.length > 0">
+      Name cannot be empty.
+    </mat-error>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions [ngStyle]="{'justify-content': 'center'}">
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [disabled]="!isNameValid()" (click)="onOkClick()" cdkFocusInitial>
+    Ok
+  </button>
+</mat-dialog-actions>

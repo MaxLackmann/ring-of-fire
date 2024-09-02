@@ -10,3 +10,21 @@
         height: 100vh;
     }
 }
+
+.start-label-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 40vw;
+        height: auto;
+
+        &:hover {
+            cursor: pointer;
+            filter: brightness(1.25);
+        }
+    }
+}
