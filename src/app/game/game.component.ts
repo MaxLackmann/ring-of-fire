@@ -58,15 +58,27 @@ export class GameComponent {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogAddPlayerComponent, {
-      disableClose: false, // Verhindert das Schließen durch Klicken außerhalb
-    });
-
-    dialogRef.afterClosed().subscribe((name: string) => {
-      if (name) {
-        // Überprüfen, ob der Name nicht undefined oder leer ist
+    const dialogRef = this.dialog.open(DialogAddPlayerComponent);
+  
+    dialogRef.afterClosed().subscribe((name : string) => {
+      if(name && name.length > 0) {
         this.game.players.push(name);
       }
     });
   }
+
+
+
+  //openDialog(): void {
+  //  const dialogRef = this.dialog.open(DialogAddPlayerComponent, {
+  //    disableClose: false, // Verhindert das Schließen durch Klicken außerhalb
+  //  });
+//
+  //  dialogRef.afterClosed().subscribe((name: string) => {
+  //    if (name) {
+  //      // Überprüfen, ob der Name nicht undefined oder leer ist
+  //      this.game.players.push(name);
+  //    }
+  //  });
+  //}
 }

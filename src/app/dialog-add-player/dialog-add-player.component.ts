@@ -32,13 +32,13 @@ export class DialogAddPlayerComponent {
     this.dialogRef.close();
   }
 
-  onOkClick(): void {
-    if (this.isNameValid()) {
-      this.dialogRef.close(this.name);
-    }
-  }
-
-  isNameValid(): boolean {
-    return this.name.trim().length > 0;
-  }
+  //onOkClick(): void {
+  //  if (this.isNameValid()) {
+  //    this.dialogRef.close(this.name);
+  //  }
+  //}
+//
+  //isNameValid(): boolean {
+  //  return this.name.trim().length > 0;
+  //}
 }

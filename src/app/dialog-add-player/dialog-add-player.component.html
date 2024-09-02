@@ -4,14 +4,26 @@
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput [(ngModel)]="name" required />
-    <mat-error *ngIf="!isNameValid() && name.length > 0">
+    <!--
+      2. Variante
+      <mat-error *ngIf="!isNameValid() && name.length > 0">
       Name cannot be empty.
     </mat-error>
+    -->
   </mat-form-field>
 </mat-dialog-content>
-<mat-dialog-actions [ngStyle]="{'justify-content': 'center'}">
+<mat-dialog-actions [ngStyle]="{ 'justify-content': 'center' }">
   <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [disabled]="!isNameValid()" (click)="onOkClick()" cdkFocusInitial>
+  <button
+    mat-button
+    [disabled]="name.length == 0"
+    [mat-dialog-close]="name"
+    cdkFocusInitial
+  >
+    <!--
+    2. Alternative
+    <button mat-button [disabled]="!isNameValid()" (click)="onOkClick()" cdkFocusInitial>
+       -->
     Ok
   </button>
 </mat-dialog-actions>
